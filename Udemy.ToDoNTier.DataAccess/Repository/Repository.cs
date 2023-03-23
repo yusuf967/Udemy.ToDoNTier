@@ -30,7 +30,7 @@ namespace Udemy.ToDoNTier.DataAccess.Repository
             return await _context.Set<T>().AsNoTracking().ToListAsync();
         }
 
-        public async Task<T> GetById(int id)
+        public async Task<T> Find(int id)
         {
             return await _context.Set<T>().FindAsync(id);
         }
