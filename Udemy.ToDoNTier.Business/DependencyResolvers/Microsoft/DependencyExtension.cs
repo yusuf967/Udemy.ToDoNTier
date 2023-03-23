@@ -1,11 +1,14 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Udemy.ToDoNTier.Business.Interfaces;
 using Udemy.ToDoNTier.Business.Mappings.AutoMapper;
 using Udemy.ToDoNTier.Business.Services;
+using Udemy.ToDoNTier.Business.ValidationRules;
 using Udemy.ToDoNTier.DataAccess.Context;
 using Udemy.ToDoNTier.DataAccess.UnitOfWork;
+using Udemy.ToDoNTier.Dtos.WorkDtos;
 
 namespace Udemy.ToDoNTier.Business.DependencyResolvers.Microsoft
 {
@@ -28,6 +31,9 @@ namespace Udemy.ToDoNTier.Business.DependencyResolvers.Microsoft
 
             services.AddScoped<IUow, Uow>();
             services.AddScoped<IWorkService, WorkService>();
+
+            services.AddTransient<IValidator<WorkCreateDto>,WorkCreateValidatorDto>();
+            services.AddTransient<IValidator<WorkUpdateDto>,WorkUpdateValidatorDto>();
         }
     }
 }

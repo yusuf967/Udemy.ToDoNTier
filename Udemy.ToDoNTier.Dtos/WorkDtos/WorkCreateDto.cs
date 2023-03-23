@@ -10,7 +10,6 @@ namespace Udemy.ToDoNTier.Dtos.WorkDtos
 {
     public class WorkCreateDto:IDto
     {
-        [Required(ErrorMessage ="Defination is Required")]
         public string Defination { get; set; }
         public bool IsCompleted { get; set; }
     }
