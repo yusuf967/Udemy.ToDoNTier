@@ -33,10 +33,7 @@ namespace Udemy.ToDoNTier.UI
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseExceptionHandler("/Error");
-            }
+            app.UseStatusCodePagesWithReExecute("/Home/NotFound","?code={0}");
 
             app.UseStaticFiles(new StaticFileOptions()
             {
