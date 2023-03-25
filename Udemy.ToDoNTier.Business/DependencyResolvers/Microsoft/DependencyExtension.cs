@@ -18,7 +18,7 @@ namespace Udemy.ToDoNTier.Business.DependencyResolvers.Microsoft
         {
             services.AddDbContext<TodoContext>(opt =>
             {
-                opt.UseSqlServer(@"Server=(localdb)\mssqllocaldb; Database=TodoApp; User=INNOVA\ydogan; Trusted_Connection=True;");
+                opt.UseSqlServer(@"Server=(localdb)\mssqllocaldb; Database=TodoApp; User=user; Trusted_Connection=True;");
             });
 
             var configuration = new MapperConfiguration(opt =>

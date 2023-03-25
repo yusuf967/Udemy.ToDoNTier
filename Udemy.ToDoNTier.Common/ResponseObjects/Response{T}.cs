@@ -12,7 +12,7 @@ namespace Udemy.ToDoNTier.Common.ResponseObjects
 
         public Response(ResponseType responseType,T data):base(responseType)
         {
-            ResponseType = responseType;
+            Data = data;
         }
 
         public Response(ResponseType responseType,string message):base(responseType, message)         {
